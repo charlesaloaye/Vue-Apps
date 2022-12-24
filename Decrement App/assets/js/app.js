@@ -1,8 +1,9 @@
+// App Component
 let counter = Vue.component('counter', {
     template: `<div>
     <h3>Count: {{this.count}}</h3>
     
-    <button class='counter-btn' @click='increment'>Decrease by {{this.subNum}}</button>
+    <button class='counter-btn' @click='decrement'>Decrease by {{this.subNum}}</button>
     </div>`,
 
     props: {
@@ -10,7 +11,6 @@ let counter = Vue.component('counter', {
             type: Number,
             default: 1,
         }
-
     },
 
     data() {
@@ -20,15 +20,12 @@ let counter = Vue.component('counter', {
     },
 
     methods: {
-        increment() {
+        decrement() {
             this.count -= this.subNum
         }
-
     }
-})
-
-
-
+});
+// App Instance
 let app = new Vue({
     el: '#app',
     data: {
@@ -40,4 +37,4 @@ let app = new Vue({
     }
 
 
-})
+});
